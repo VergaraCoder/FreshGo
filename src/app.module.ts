@@ -3,6 +3,7 @@ import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { DbConfig } from './common/db/db.config';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { DbConfig } from './common/db/db.config';
       imports: [ConfigModule],
       useClass: DbConfig,
     }),
+    ProductsModule,
   ],
   controllers: [],
   providers: [],

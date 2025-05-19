@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { DbConfig } from './common/db/db.config';
 import { ProductsModule } from './products/products.module';
 import { CategoryModule } from './category/category.module';
+import { ProductUnitPriceModule } from './product-unit-price/product-unit-price.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { CategoryModule } from './category/category.module';
     }),
     ProductsModule,
     CategoryModule,
+    ProductUnitPriceModule,
   ],
   controllers: [],
   providers: [],

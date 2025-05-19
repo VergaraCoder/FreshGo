@@ -1,5 +1,12 @@
 import { Category } from 'src/category/entities/category.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { ProductUnitPrice } from 'src/product-unit-price/entities/product-unit-price.entity';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity('products')
 export class Product {
@@ -20,4 +27,10 @@ export class Product {
 
   @ManyToOne(() => Category, (category) => category)
   category: Category;
+
+  @OneToMany(
+    () => ProductUnitPrice,
+    (productunitprice) => productunitprice.product,
+  )
+  productunitprice: ProductUnitPrice[];
 }
